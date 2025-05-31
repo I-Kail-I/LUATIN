@@ -1,11 +1,14 @@
 "use client";
-import { ModeToggle } from "@/components/modeToggler";
 import React from "react";
 import { Roboto } from "next/font/google";
 import { RiTailwindCssFill as TailwindLogo } from "react-icons/ri";
 import HeroImage from "../../public/home/hero-pict.png";
 import { PiExclamationMarkFill as Exclamation } from "react-icons/pi";
 import { SiNextdotjs as NextLogo } from "react-icons/si";
+import Pict1 from "../../public/home/function-1.avif";
+import Pict2 from "../../public/home/function-2.avif";
+import Pict3 from "../../public/home/function-3.avif";
+import Pict4 from "../../public/home/function-4.avif";
 import { VscRocket as Rocket } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { GrSearch as Search } from "react-icons/gr";
@@ -39,6 +42,24 @@ export default function Home() {
       title: "Search Engine Optimization",
       description:
         "NextJs and TailwindCss make it easy to optimize your website for search engines.",
+    },
+  ];
+
+  const functionality = [
+    {
+      image: Pict1,
+      title: "Building on modern foundations",
+      description:
+        "Gain a competitive advantage by incorporating industry leading practices",
+      list1: "Built on top of Next.Js",
+      description1:
+        "Benefiting from the performance and developer-friendly features of this modern static site generator",
+      list2: "Styled using Tailwind CSS",
+      description2:
+        "Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.",
+      list3: "Cross-browser compatibility",
+      description3:
+        "Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.",
     },
   ];
 
@@ -138,20 +159,26 @@ export default function Home() {
       </motion.section>
 
       <motion.section
-        className="feature-section flex w-full flex-col  min-h-screen"
+        className="feature-section flex w-full flex-col min-h-screen"
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
       >
-        <div className="feature-title flex w-full justify-center items-center flex-col mt-20">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="feature-title flex w-full justify-center items-center flex-col mt-20"
+        >
           <h1 className="text-lg sm:text-lg md:text-xl lg:text-xl text-blue-300 font-semibold">
             FEATURES
           </h1>
           <p className="text-center text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white">
             What do you get from{" "}
             <span className="font-bold text-gray-400"> NextJs </span> and
-            <span className="font-bold text-blue-200"> TailwindCss </span>?
+            <span className="font-bold text-blue-200"> TailwindCss </span>
           </p>
 
           <p className="quick-explanations text-center text-md sm:text-md md:text-lg lg:text-lg font-semibold text-gray-500 mt-5 max-w-4xl">
@@ -160,9 +187,15 @@ export default function Home() {
             proven in thousands of high-performance apps. Build better, faster,
             and with unmatched efficiency. The future of frontend starts here.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="feature-list grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto p-8 mt-10">
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="feature-list grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto p-8 mt-10"
+        >
           {featuresText.map((feature, index) => (
             <div
               key={index}
@@ -181,7 +214,31 @@ export default function Home() {
               </div>
             </div>
           ))}
-        </div>
+        </motion.div>
+      </motion.section>
+
+      <motion.section
+        className="functionality-section flex w-full flex-col min-h-screen"
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4 }}
+      >
+        <motion.div
+          initial={{ y: 20, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4 }}
+          className="functionality-title flex w-full justify-center items-center mt-30"
+        >
+          <h1
+            className={`text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold max-w-lg text-center ${robotoBold.className}`}
+          >
+            <span className="font-bold text-gray-400"> NextJs </span> and
+            <span className="font-bold text-blue-200"> TailwindCss </span> get
+            your times worth!
+          </h1>
+        </motion.div>
       </motion.section>
     </motion.main>
   );
