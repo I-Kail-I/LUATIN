@@ -129,13 +129,13 @@ export default function Home() {
           </a>
 
           <a
-            className={`tailwindcss-link bg-gray-600 p-3 rounded-full hover:bg-gray-800 duration-300 transition-colors text-white flex flex-row ${robotoLight.className}`}
+            className={`tailwindcss-link bg-gray-600 px-6 py-3 rounded-full hover:bg-gray-800 duration-300 transition-colors text-white flex flex-row ${robotoLight.className}`}
             href="https://nextjs.org/docs"
             target="_blank"
             rel="noopener noreferrer"
           >
             Start with NextJs
-            <NextLogo className="text-gray-500 mt-0.5 ms-2 text-xl" />
+            <NextLogo className="text-gray-500 mt-0.5 ms-4 text-xl" />
           </a>
         </motion.div>
       </motion.section>
@@ -181,7 +181,7 @@ export default function Home() {
             <span className="font-bold text-blue-200"> TailwindCss </span>
           </p>
 
-          <p className="quick-explanations text-center text-md sm:text-md md:text-lg lg:text-lg font-semibold text-gray-500 mt-5 max-w-4xl">
+          <p className="quick-explanations text-center text-md sm:text-md md:text-lg lg:text-lg font-semibold text-gray-500 mt-5 max-w-4xl px-9 ">
             Tailwind CSS + Next.js—the most powerful combo in modern web dev.
             Trusted by industry leaders, backed by massive GitHub stars, and
             proven in thousands of high-performance apps. Build better, faster,

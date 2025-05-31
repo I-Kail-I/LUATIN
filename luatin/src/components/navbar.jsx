@@ -128,7 +128,7 @@ export default function Header() {
   ];
 
   return (
-    <header className=" mx-auto px-4 sticky top-0 z-50 bg-accent">
+    <header className=" mx-auto px-4 fixed w-screen top-0 z-50 ">
       <div className="flex items-center justify-between h-16">
         {/* Logo */}
         <Link href="/" passHref>
