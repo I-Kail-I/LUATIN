@@ -128,8 +128,8 @@ export default function Header() {
   ];
 
   return (
-    <header className=" mx-auto px-4 fixed w-screen top-0 z-50 ">
-      <div className="flex items-center justify-between h-16">
+    <header className=" mx-auto px-4 fixed w-screen top-0 z-50 bg-accent sm:bg-accent md:bg-transparent lg:bg-transparent">
+      <div className="flex items-center justify-between h-16 text-black dark:text-white">
         {/* Logo */}
         <Link href="/" passHref>
           <div className="flex items-center space-x-2">

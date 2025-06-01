@@ -11,7 +11,9 @@ import Pict3 from "../../public/home/function-3.avif";
 import Pict4 from "../../public/home/function-4.avif";
 import { VscRocket as Rocket } from "react-icons/vsc";
 import { motion } from "framer-motion";
+import { Check } from "lucide-react";
 import { GrSearch as Search } from "react-icons/gr";
+import Image from "next/image";
 
 const robotoBold = Roboto({ weight: "700", subsets: ["latin"] });
 const robotoSemiBold = Roboto({ weight: "500", subsets: ["latin"] });
@@ -45,16 +47,16 @@ export default function Home() {
     },
   ];
 
-  const functionality = [
+  const functionality1 = [
     {
       image: Pict1,
       title: "Building on modern foundations",
       description:
-        "Gain a competitive advantage by incorporating industry leading practices",
+        "Gain a competitive advantage by incorporating industry leading practices.",
       list1: "Built on top of Next.Js",
       description1:
         "Benefiting from the performance and developer-friendly features of this modern static site generator",
-      list2: "Styled using Tailwind CSS",
+      list2: "Styled using Tailwind CSS.",
       description2:
         "Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.",
       list3: "Cross-browser compatibility",
@@ -82,12 +84,14 @@ export default function Home() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.4, type: "keyframes", ease: "easeInOut" }}
         >
           <h1
             className={`main-text max-w-3xl text-4xl lg:text-6xl md:text-6xl sm:text-5xl text-center dark:text-white text-white ${robotoBold.className}`}
           >
-            Creating webs with
+            <span className="text-shadow-2xl shadow-black">
+              Creating webs with
+            </span>
             <span className="font-bold text-gray-400"> NextJs </span>{" "}
             <span className="black">-</span>{" "}
             <span className="font-bold text-blue-200"> TailwindCss </span>
@@ -98,7 +102,7 @@ export default function Home() {
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
+            transition={{ duration: 0.4, type: "keyframes", ease: "easeInOut" }}
           >
             <span className="font-bold text-gray-400"> NextJs </span> and
             <span className="font-bold text-blue-200"> TailwindCss </span> are
@@ -116,7 +120,12 @@ export default function Home() {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: 0.4 }}
+          transition={{
+            duration: 0.4,
+            delay: 0.3,
+            type: "keyframes",
+            ease: "easeInOut",
+          }}
         >
           <a
             className={`tailwindcss-link bg-violet-300 p-3 rounded-full hover:bg-blue-600 duration-300 transition-colors text-white flex flex-row ${robotoLight.className}`}
@@ -145,7 +154,12 @@ export default function Home() {
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.3,
+          type: "keyframes",
+          ease: "easeInOut",
+        }}
       >
         <div className="Philosophy-text flex justify-center items-center w-full bg-[#1e293b] flex-row p-3">
           <Exclamation className="hidden sm:flex md:flex lg:flex sm:text-2xl md:text-4xl lg:text-4xl text-white" />
@@ -163,14 +177,19 @@ export default function Home() {
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.3,
+          type: "keyframes",
+          ease: "easeInOut",
+        }}
       >
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="feature-title flex w-full justify-center items-center flex-col mt-20"
+          className="feature-title flex w-full justify-center items-center flex-col mt-10 "
         >
           <h1 className="text-lg sm:text-lg md:text-xl lg:text-xl text-blue-300 font-semibold">
             FEATURES
@@ -189,17 +208,15 @@ export default function Home() {
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ y: 20, opacity: 0 }}
-          whileInView={{ y: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
-          className="feature-list grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto p-8 mt-10"
-        >
+        <div className="feature-list grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto p-8 mt-10">
           {featuresText.map((feature, index) => (
-            <div
+            <motion.div
               key={index}
               className="feature-container flex flex-col p-6 relative"
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: "0.4", delay: 0.3 }}
             >
               <div className="icon-container border border-black p-3 rounded-full w-fit mb-4 bg-gray-500">
                 {feature.icon}
@@ -212,23 +229,28 @@ export default function Home() {
               <div className="feature-description">
                 <p className="text-gray-500">{feature.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </motion.div>
+        </div>
       </motion.section>
 
       <motion.section
-        className="functionality-section flex w-full flex-col min-h-screen"
+        className="functionality-section flex w-full flex-col min-h-screen justify-center "
         initial={{ y: 20, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.4 }}
+        transition={{
+          duration: 0.4,
+          delay: 0.3,
+          type: "keyframes",
+          ease: "easeInOut",
+        }}
       >
         <motion.div
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.4 }}
+          transition={{ duration: 0.4, type: "keyframes", ease: "easeInOut" }}
           className="functionality-title flex w-full justify-center items-center mt-30"
         >
           <h1
@@ -239,6 +261,214 @@ export default function Home() {
             your times worth!
           </h1>
         </motion.div>
+
+        {functionality1.map((feature, index) => (
+          <div
+            className="list-container flex flex-col sm:flex-col md:flex-col lg:flex-row justify-center items-center mt-20 md:text-center sm:text-center lg:text-start text-center gap-y-15"
+            key={index}
+          >
+            <div className="image-container flex w-full justify-center items-center p-4">
+              <div className="image flex w-170">
+                <Image
+                  src={feature.image}
+                  alt="Image"
+                  layout="cover"
+                  className="image rounded-2xl"
+                />
+              </div>
+            </div>
+
+            <div className="text-container w-full justify-center items-center flex flex-col me-20">
+              <div className="title-container">
+                <h1
+                  className={`title-text text-4xl hidden sm:hidden md:flex lg:flex ${robotoBold.className}`}
+                >
+                  {feature.title}
+                </h1>
+
+                <p className="description-text text-gray-500 text-lg max-w-lg">
+                  {feature.description}
+                </p>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list1}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description1}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list2}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description2}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list3}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description3}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list3}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description3}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+
+        {functionality1.map((feature, index) => (
+          <div
+            className="list-container flex flex-col sm:flex-col md:flex-col lg:flex-row-reverse justify-center items-center mt-20 md:text-center sm:text-center lg:text-start text-center gap-y-15"
+            key={index}
+          >
+            <div className="image-container flex w-full justify-center items-center p-4">
+              <div className="image flex w-170">
+                <Image
+                  src={feature.image}
+                  alt="Image"
+                  layout="cover"
+                  className="image rounded-2xl"
+                />
+              </div>
+            </div>
+
+            <div className="text-container w-full justify-center items-center flex flex-col me-20">
+              <div className="title-container">
+                <h1
+                  className={`title-text text-4xl hidden sm:hidden md:flex lg:flex ${robotoBold.className}`}
+                >
+                  {feature.title}
+                </h1>
+
+                <p className="description-text text-gray-500 text-lg max-w-lg">
+                  {feature.description}
+                </p>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list1}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description1}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list2}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description2}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list3}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description3}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="list-container flex flex-col mt-10">
+                <div className="list-title-container flex flex-col">
+                  <div className="flex flex-col">
+                    <h1 className="list-title flex text-xl font-semibold">
+                      <Check
+                        className="bg-green-600 rounded-full p-1 me-3"
+                        size={30}
+                      />
+                      {feature.list3}
+                    </h1>
+
+                    <p className="text-gray-500 max-w-sm ms-10.5">
+                      {feature.description3}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </motion.section>
     </motion.main>
   );
