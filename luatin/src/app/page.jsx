@@ -263,9 +263,13 @@ export default function Home() {
         </motion.div>
 
         {functionality1.map((feature, index) => (
-          <div
-            className="list-container flex flex-col sm:flex-col md:flex-col lg:flex-row justify-center items-center mt-20 md:text-center sm:text-center lg:text-start text-center gap-y-15"
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, type: "keyframes", ease: "easeInOut" }}
             key={index}
+            className="list-container flex flex-col sm:flex-col md:flex-col lg:flex-row justify-center items-center mt-20 md:text-center sm:text-center lg:text-start text-center gap-y-15"
           >
             <div className="image-container flex w-full justify-center items-center p-4">
               <div className="image flex w-170">
@@ -294,9 +298,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list1}
@@ -312,9 +316,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list2}
@@ -330,9 +334,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list3}
@@ -348,9 +352,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list3}
@@ -363,13 +367,17 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
 
         {functionality1.map((feature, index) => (
-          <div
-            className="list-container flex flex-col sm:flex-col md:flex-col lg:flex-row-reverse justify-center items-center mt-20 md:text-center sm:text-center lg:text-start text-center gap-y-15"
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, type: "keyframes", ease: "easeInOut" }}
             key={index}
+            className="list-container flex flex-col sm:flex-col md:flex-col lg:flex-row-reverse justify-center items-center mt-20 md:text-center sm:text-center lg:text-start text-center gap-y-15"
           >
             <div className="image-container flex w-full justify-center items-center p-4">
               <div className="image flex w-170">
@@ -398,9 +406,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list1}
@@ -416,9 +424,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list2}
@@ -434,9 +442,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list3}
@@ -452,9 +460,9 @@ export default function Home() {
               <div className="list-container flex flex-col mt-10">
                 <div className="list-title-container flex flex-col">
                   <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold">
+                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
                       <Check
-                        className="bg-green-600 rounded-full p-1 me-3"
+                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
                         size={30}
                       />
                       {feature.list3}
@@ -467,7 +475,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </motion.section>
     </motion.main>
