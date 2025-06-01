@@ -8,7 +8,6 @@ import { SiNextdotjs as NextLogo } from "react-icons/si";
 import Pict1 from "../../public/home/function-1.avif";
 import Pict2 from "../../public/home/function-2.avif";
 import Pict3 from "../../public/home/function-3.avif";
-import Pict4 from "../../public/home/function-4.avif";
 import { VscRocket as Rocket } from "react-icons/vsc";
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
@@ -62,6 +61,83 @@ export default function Home() {
       list3: "Cross-browser compatibility",
       description3:
         "Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.",
+    },
+  ];
+
+  const functionality2 = [
+    {
+      image: Pict2,
+      description: "Ensure your online presence truly represents you.",
+      list1: "High level of customization",
+      description1:
+        "TailwindCss the NextJs effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.",
+      list2: "Multiple layout possibilities",
+      description2:
+        "Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.",
+      title3: "Fully responsive design",
+      description3:
+        "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
+      title4: "Integration of media.",
+      description4:
+        "Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.",
+    },
+  ];
+
+  const functionality3 = [
+    {
+      image: Pict3,
+      description: "Designed to foster growth and success..",
+      list1: "Enhanced user engagement",
+      description1:
+        "Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.",
+      list2: "Continuous improvement",
+      description2:
+        "Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.",
+      title3: "Time and resource efficiency.",
+      description3:
+        "Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.",
+      title4: "Community support.",
+      description4:
+        "Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.",
+    },
+  ];
+
+  const componentsContent = [
+    {
+      box: 1,
+      icon: "📍",
+      title: "Headers",
+      description: "Website GPS for navigation direction",
+    },
+    {
+      box: 2,
+      icon: "📝",
+      title: "Content",
+      description: "The meat and potatoes of your site - king of the page",
+    },
+    {
+      box: 3,
+      icon: "🦸",
+      title: "Hero",
+      description: "Makes grand superhero entrances on your page",
+    },
+    {
+      box: 4,
+      icon: "👆",
+      title: "Call-to-Action",
+      description: "That enthusiastic button nudging users to take action",
+    },
+    {
+      box: 5,
+      icon: "✨",
+      title: "Features",
+      description: "Showcase your product's superpowers and bragging rights",
+    },
+    {
+      box: 6,
+      icon: "💰",
+      title: "Pricing",
+      description: "Tempting dessert menu of your offerings",
     },
   ];
 
@@ -195,7 +271,7 @@ export default function Home() {
             FEATURES
           </h1>
           <p className="text-center text-2xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-black dark:text-white">
-            What do you get from{" "}
+            What do you get from
             <span className="font-bold text-gray-400"> NextJs </span> and
             <span className="font-bold text-blue-200"> TailwindCss </span>
           </p>
@@ -212,11 +288,16 @@ export default function Home() {
           {featuresText.map((feature, index) => (
             <motion.div
               key={index}
-              className="feature-container flex flex-col p-6 relative"
+              className="feature-container flex flex-col p-6 relative w-full items-center sm:items-center md:items-center lg:items-start text-center sm:text-center md:text-center lg:text-start"
               initial={{ y: 20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: "0.4", delay: 0.3 }}
+              transition={{
+                duration: "0.4",
+                delay: index * 0.3,
+                type: "keyframes",
+                ease: "easeInOut",
+              }}
             >
               <div className="icon-container border border-black p-3 rounded-full w-fit mb-4 bg-gray-500">
                 {feature.icon}
@@ -227,7 +308,7 @@ export default function Home() {
               </div>
 
               <div className="feature-description">
-                <p className="text-gray-500">{feature.description}</p>
+                <p className="text-gray-500 max-w-md">{feature.description}</p>
               </div>
             </motion.div>
           ))}
@@ -282,95 +363,41 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-container w-full justify-center items-center flex flex-col me-20">
+            <div className="text-container w-full justify-center items-center flex flex-col me-20 lg:me-0 lg:px-4">
               <div className="title-container">
                 <h1
-                  className={`title-text text-4xl hidden sm:hidden md:flex lg:flex ${robotoBold.className}`}
+                  className={`title-text text-4xl hidden sm:hidden md:flex lg:flex lg:text-[min(4vw,2.5rem)] ${robotoBold.className}`}
                 >
                   {feature.title}
                 </h1>
-
-                <p className="description-text text-gray-500 text-lg max-w-lg">
+                <p className="description-text text-gray-500 text-lg lg:text-[min(1.25vw,1.125rem)] max-w-lg">
                   {feature.description}
                 </p>
               </div>
 
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list1}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description1}
-                    </p>
+              {[1, 2, 3].map((index) => (
+                <div key={index} className="list-container flex flex-col mt-10">
+                  <div className="list-title-container flex flex-col">
+                    <div className="flex flex-col">
+                      <h1 className="list-title flex text-lg sm:text-lg md:text-xl lg:text-[min(1.5vw,1.25rem)] font-semibold justify-center sm:justify-center md:justify-start lg:justify-start">
+                        <Check
+                          className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
+                          size={30}
+                        />
+                        {feature[`list${index}`]}
+                      </h1>
+                      <p className="text-gray-500 max-w-sm ms-10.5 text-base sm:text-base md:text-sm lg:text-[min(1.25vw,1rem)]">
+                        {feature[`description${index}`]}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list2}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description2}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list3}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description3}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list3}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description3}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </motion.div>
         ))}
 
-        {functionality1.map((feature, index) => (
+        {functionality2.map((feature, index) => (
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
@@ -390,93 +417,107 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="text-container w-full justify-center items-center flex flex-col me-20">
+            <div className="text-container w-full justify-center items-center flex flex-col me-20 lg:me-0 lg:px-4">
               <div className="title-container">
-                <h1
-                  className={`title-text text-4xl hidden sm:hidden md:flex lg:flex ${robotoBold.className}`}
-                >
-                  {feature.title}
-                </h1>
-
-                <p className="description-text text-gray-500 text-lg max-w-lg">
+                <p className="description-text text-gray-500 text-lg lg:text-[min(1.25vw,1.125rem)] max-w-lg">
                   {feature.description}
                 </p>
               </div>
 
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list1}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description1}
-                    </p>
+              {[1, 2, 3].map((index) => (
+                <div key={index} className="list-container flex flex-col mt-10">
+                  <div className="list-title-container flex flex-col">
+                    <div className="flex flex-col">
+                      <h1 className="list-title flex text-lg sm:text-lg md:text-xl lg:text-[min(1.5vw,1.25rem)] font-semibold justify-center sm:justify-center md:justify-start lg:justify-start">
+                        <Check
+                          className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
+                          size={30}
+                        />
+                        {feature[`list${index}`]}
+                      </h1>
+                      <p className="text-gray-500 max-w-sm ms-10.5 text-base sm:text-base md:text-sm lg:text-[min(1.25vw,1rem)]">
+                        {feature[`description${index}`]}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list2}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description2}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list3}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description3}
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="list-container flex flex-col mt-10">
-                <div className="list-title-container flex flex-col">
-                  <div className="flex flex-col">
-                    <h1 className="list-title flex text-xl font-semibold w-full justify-center sm:justify-center md:justify-start lg:justify-start">
-                      <Check
-                        className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
-                        size={30}
-                      />
-                      {feature.list3}
-                    </h1>
-
-                    <p className="text-gray-500 max-w-sm ms-10.5">
-                      {feature.description3}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </motion.div>
         ))}
+
+        {functionality3.map((feature, index) => (
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, type: "keyframes", ease: "easeInOut" }}
+            key={index}
+            className="list-container flex flex-col sm:flex-col md:flex-col lg:flex-row justify-center items-center mt-20 md:text-center sm:text-center lg:text-start text-center gap-y-15"
+          >
+            <div className="image-container flex w-full justify-center items-center p-4">
+              <div className="image flex w-170">
+                <Image
+                  src={feature.image}
+                  alt="Image"
+                  layout="cover"
+                  className="image rounded-2xl"
+                />
+              </div>
+            </div>
+
+            <div className="text-container w-full justify-center items-center flex flex-col me-20 lg:me-0 lg:px-4">
+              <div className="title-container">
+                <p className="description-text text-gray-500 text-lg lg:text-[min(1.25vw,1.125rem)] max-w-lg">
+                  {feature.description}
+                </p>
+              </div>
+
+              {[1, 2, 3].map((index) => (
+                <div key={index} className="list-container flex flex-col mt-10">
+                  <div className="list-title-container flex flex-col">
+                    <div className="flex flex-col">
+                      <h1 className="list-title flex text-lg sm:text-lg md:text-xl lg:text-[min(1.5vw,1.25rem)] font-semibold justify-center sm:justify-center md:justify-start lg:justify-start">
+                        <Check
+                          className="bg-green-600 rounded-full p-1 me-3 hidden sm:hidden md:flex lg:flex"
+                          size={30}
+                        />
+                        {feature[`list${index}`]}
+                      </h1>
+                      <p className="text-gray-500 max-w-sm ms-10.5 text-base sm:text-base md:text-sm lg:text-[min(1.25vw,1rem)]">
+                        {feature[`description${index}`]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+        ))}
+      </motion.section>
+
+      <motion.section
+        initial={{ y: 20, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, type: "keyframes", ease: "easeInOut" }}
+        className="components-section w-full flex justify-center items-center mt-20"
+      >
+        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-rows-6 sm:grid-rows-3 md:grid-rows-2 lg:grid-rows-2 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-40">
+            {componentsContent.map((component, index) => (
+              <div key={index} className="h-full min-h-[200px]">
+                <div className="component-card h-full rounded-xl px-20 py-5 border border-gray-800 bg-[#0F172A]/40 flex flex-col items-center text-center">
+                  <span className="text-3xl mb-4">{component.icon}</span>
+                  <h1 className={`text-xl mb-2 ${robotoBold.className}`}>
+                    {component.title}
+                  </h1>
+                  <p className="text-gray-300">{component.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </motion.section>
     </motion.main>
   );
